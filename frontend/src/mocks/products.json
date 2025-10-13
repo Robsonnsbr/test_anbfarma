@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Banana Nanica",
+    "description": "Docinha e madura",
+    "price": 4.99,
+    "category": "Fruta",
+    "image_url": "https://static.vecteezy.com/ti/fotos-gratis/t1/27717197-banana-arvore-com-maduro-frutas-generativo-ai-foto.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Maçã Fuji",
+    "description": "Crocante e suculenta",
+    "price": 6.49,
+    "category": "Fruta",
+    "image_url": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    "id": 3,
+    "name": "Abacate",
+    "description": "Ideal para vitaminas",
+    "price": 8.99,
+    "category": "Fruta",
+    "image_url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2"
+  }
+]
