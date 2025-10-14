@@ -225,36 +225,22 @@ O seed gera automaticamente 10 produtos com nomes, preços e imagens reais.
 - Todos os containers estão integrados e podem ser reiniciados via `docker compose down && docker compose up -d`.
 
 ## Preview Front-end
-
-<!-- Preview Front-end (títulos abaixo das imagens) -->
 <p align="center">
-  <figure style="display:inline-block; text-align:center; margin:10px;">
-    <img src="https://github.com/user-attachments/assets/19a37058-2930-41d1-bbae-8b41bcd67133" alt="Login" width="45%" hspace="5" />
-    <figcaption><em>login</em></figcaption>
-  </figure>
-
-  <figure style="display:inline-block; text-align:center; margin:10px;">
-    <img src="https://github.com/user-attachments/assets/81dfdcb4-f0e8-4f7a-975d-05fa82ee8ac6" alt="Login 2" width="45%" hspace="5" />
-    <figcaption><em>login</em></figcaption>
-  </figure>
+  <img src="https://github.com/user-attachments/assets/19a37058-2930-41d1-bbae-8b41bcd67133" alt="Login 1" width="45%" hspace="5" />
+  <img src="https://github.com/user-attachments/assets/81dfdcb4-f0e8-4f7a-975d-05fa82ee8ac6" alt="Login 2" width="45%" hspace="5" />
+  <br/>
+  <em>login</em>
 </p>
 
 <p align="center">
-  <figure style="display:inline-block; text-align:center; margin:10px;">
-    <img src="https://github.com/user-attachments/assets/ec0fef98-bc6b-4df7-81c9-1a46c034023d" alt="Home" width="45%" hspace="5" />
-    <figcaption><em>home</em></figcaption>
-  </figure>
+  <img src="https://github.com/user-attachments/assets/ec0fef98-bc6b-4df7-81c9-1a46c034023d" alt="Home" width="60%" />
+  <br/>
+  <em>home</em>
 </p>
 
 <p align="center">
-  <figure style="display:inline-block; text-align:center; margin:10px;">
-    <img src="https://github.com/user-attachments/assets/1d199282-6f3e-4638-a41e-0d4997254f63" alt="Dashboard" width="45%" hspace="5" />
-    <figcaption><em>dashboard</em></figcaption>
-  </figure>
-
-  <figure style="display:inline-block; text-align:center; margin:10px;">
-    <img src="https://github.com/user-attachments/assets/2f897e94-bdf1-4fcf-940a-d6f2be477e01" alt="Dashboard 2" width="45%" hspace="5" />
-    <figcaption><em>dashboard</em></figcaption>
-  </figure>
+  <img src="https://github.com/user-attachments/assets/1d199282-6f3e-4638-a41e-0d4997254f63" alt="Dashboard 1" width="45%" hspace="5" />
+  <img src="https://github.com/user-attachments/assets/2f897e94-bdf1-4fcf-940a-d6f2be477e01" alt="Dashboard 2" width="45%" hspace="5" />
+  <br/>
+  <em>dashboard</em>
 </p>
-
