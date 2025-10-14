@@ -126,6 +126,7 @@ O script executa automaticamente as seguintes etapas:
 - Instala dependências (Composer e npm).
 - Gera `APP_KEY`.
 - Roda migrations e seeds.
+- Roda os Tests
 - Inicia o frontend em modo desenvolvimento.
 
 Após a execução, acesse:
