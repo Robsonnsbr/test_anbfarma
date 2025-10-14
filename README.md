@@ -217,12 +217,6 @@ O seed gera automaticamente 10 produtos com nomes, preços e imagens reais.
 
 ---
 
-## 🛒 Frontend – Preview
-
-<img width="1107" alt="Frontend Frutaria" src="https://github.com/user-attachments/assets/b00cdd4d-724c-455f-8a36-2fcd1dcfb930" />
-
----
-
 ## 📘 Observações finais
 
 - O sistema roda **exclusivamente em modo de desenvolvimento**.
@@ -233,10 +227,16 @@ O seed gera automaticamente 10 produtos com nomes, preços e imagens reais.
 ## Preview Front-end
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ec0fef98-bc6b-4df7-81c9-1a46c034023d" alt="Preview 1" width="19%" />
-  <img src="https://github.com/user-attachments/assets/81dfdcb4-f0e8-4f7a-975d-05fa82ee8ac6" alt="Preview 2" width="19%" />
-  <img src="https://github.com/user-attachments/assets/2f897e94-bdf1-4fcf-940a-d6f2be477e01" alt="Preview 3" width="19%" />
-  <img src="https://github.com/user-attachments/assets/19a37058-2930-41d1-bbae-8b41bcd67133" alt="Preview 4" width="19%" />
-  <img src="https://github.com/user-attachments/assets/1d199282-6f3e-4638-a41e-0d4997254f63" alt="Preview 5" width="19%" />
+  <img src="https://github.com/user-attachments/assets/ec0fef98-bc6b-4df7-81c9-1a46c034023d" alt="Preview 1" width="45%" hspace="5" />
+  <img src="https://github.com/user-attachments/assets/81dfdcb4-f0e8-4f7a-975d-05fa82ee8ac6" alt="Preview 2" width="45%" hspace="5" />
 </p>
-<p align="center"><em>preview front-end</em></p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2f897e94-bdf1-4fcf-940a-d6f2be477e01" alt="Preview 3" width="45%" hspace="5" />
+  <img src="https://github.com/user-attachments/assets/19a37058-2930-41d1-bbae-8b41bcd67133" alt="Preview 4" width="45%" hspace="5" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1d199282-6f3e-4638-a41e-0d4997254f63" alt="Preview 5" width="45%" hspace="5" />
+</p>
+
