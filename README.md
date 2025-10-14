@@ -1,149 +1,231 @@
-# Teste Técnico – Migração PHP Nativo → Laravel + Next.js
+# 🍎 Projeto E-Commerce Frutaria – Laravel + Next.js
 
-Este projeto implementa a migração de um código legado em PHP 7.4 procedural[`legacy/fornecedor_legacy.php`](legacy/fornecedor_legacy.php). para uma API moderna em **Laravel 12**, com frontend em **Next.js 14**.
+Este projeto implementa um **e-commerce simples para uma frutaria**, desenvolvido com **Laravel 12 (PHP 8.3)** no backend, **Next.js 14 (TypeScript + Tailwind CSS)** no frontend e **MySQL 8.4** como banco de dados.  
+Todo o ambiente está configurado via **Docker Compose**, com containers separados para backend, frontend e banco.
 
-O escopo segue o que foi solicitado no desafio: migração, boas práticas, arquitetura em camadas e entrega de uma API funcional com frontend simples para consumir os endpoints.
+O sistema simula o fluxo básico de um e-commerce:
 
----
-
-## O que foi solicitado
-
-- Criar **migration** e **model** `Fornecedor` com `created_at`, `updated_at` e soft deletes.
-- Criar **FormRequest** para validações.
-- Implementar **endpoints REST**:
-  - `POST /api/v1/fornecedores`
-  - `GET /api/v1/fornecedores?nome=...` (filtro por nome).
-- Adotar **Service Layer** (sanitização de CNPJ, uso de transações).
-- Usar **Resource** para formatação das respostas JSON.
-- Implementar **testes Feature**:
-  - Sucesso na criação.
-  - Falha de validação.
-  - Busca filtrada.
-- Elaborar um **plano de migração** (1 página).
-- Incluir **README** com instruções de execução.
+- autenticação de usuários;
+- cadastro e gestão de produtos (CRUD completo);
+- listagem e simulação de compra dos produtos.
 
 ---
 
-## O que foi entregue
+## 🧩 O que foi solicitado
 
-- [x] Migration `fornecedores` com timestamps e soft deletes.
-- [x] Model `Fornecedor`.
-- [x] FormRequest `StoreFornecedorRequest` com regras e mensagens customizadas.
-- [x] Service `FornecedorService` para regras de negócio e transações.
-- [x] Resource `FornecedorResource`.
-- [x] Controller `FornecedorController` com métodos `index` e `store`.
-- [x] Rotas `api.php` versionadas (`/api/v1/fornecedores`).
-- [x] Testes Feature cobrindo cenários de sucesso, falha de validação e busca.
-- [x] Plano de migração em `legacy/README_legacy.md.md`.
-- [x] Frontend em Next.js:
-  - Formulário com validação client-side (Zod).
-  - Filtro por nome.
-  - Layout responsivo em TailwindCSS.
-- [x] Setup automatizado (`setup.sh`) para subir containers, rodar migrations, seeds e testes.
+- Criar **página de login** (autenticação de usuários com Sanctum).
+- Criar **página de cadastro de produtos** com operações de **criação, edição e exclusão**.
+- Criar **página de listagem/venda de produtos**, simulando a experiência de compra.
+- Implementar **migrations e seeds** para popular o banco.
+- Adotar **boas práticas de organização**, com código limpo, componentizado e responsivo.
+- Entregar o código funcional com **frontend + backend + banco** rodando em modo de desenvolvimento.
 
 ---
 
-## Tecnologias utilizadas
+## ✅ O que foi entregue
+
+- [x] **Backend (Laravel 12):**
+
+  - Migration `products` e `users` com timestamps.
+  - Seeds e factories para gerar produtos com imagens reais.
+  - Autenticação com **Laravel Sanctum**.
+  - Controllers:
+    - `AuthController` (`register`, `login`, `logout`);
+    - `ProductController` (`index`, `store`, `update`, `destroy`).
+  - Rotas versionadas (`/api/v1/...`).
+  - PSR-12 e princípios **SOLID** aplicados.
+  - Responses padronizadas em JSON.
+  - Docker configurado com PHP 8.3 e MySQL 8.4.
+
+- [x] **Frontend (Next.js 14 + TypeScript + Tailwind):**
+
+  - Página de **Login** integrada com a API Laravel via Axios.
+  - Página de **Dashboard/Admin** para CRUD de produtos.
+  - Página de **Loja** simulando a experiência de compra.
+  - Contexto de autenticação (AuthContext) e de carrinho (CartContext).
+  - Componentes reutilizáveis (Card, Button, Input, Header).
+  - Validações client-side com **Zod**.
+  - Layout totalmente responsivo.
+
+- [x] **Banco de Dados (MySQL 8.4):**
+
+  - Estrutura criada via migrations.
+  - Seeds automáticos para popular produtos.
+  - Mock com imagens reais de frutas (não randômico).
+
+- [x] **Infraestrutura:**
+  - Ambiente completo via Docker Compose.
+  - Containers independentes: `backend`, `frontend`, `db`.
+  - Configuração `.env` automatizada.
+  - Projeto executando 100% em modo desenvolvimento.
+
+---
+
+## ⚙️ Tecnologias utilizadas
 
 ### Backend
 
-- [Laravel 12](https://laravel.com) (PSR-12, Eloquent, FormRequests, Resources, Services).
-- PHP 8.3 (via container).
-- MySQL 8.4.
-- PHPUnit para testes.
+- [Laravel 12](https://laravel.com/)
+- PHP 8.3
+- MySQL 8.4
+- Sanctum para autenticação
+- Eloquent ORM
+- Factories e Seeders
 
 ### Frontend
 
-- [Next.js 14](https://nextjs.org/) com App Router.
-- React 18.
-- TailwindCSS.
-- [Zod](https://zod.dev) para validação.
+- [Next.js 14](https://nextjs.org/)
+- TypeScript
+- React 18
+- Tailwind CSS
+- Axios
+- Zod
 
 ### Infraestrutura
 
-- Docker Compose (MySQL, Laravel, Next.js, Nginx).
-- Script `setup.sh` para automação de ambiente.
+- Docker & Docker Compose
+- Nginx
+- Node 20
+- Composer
 
 ---
 
-## Como executar
+## 🚀 Como executar o projeto
 
 ### Pré-requisitos
 
-- Docker e Docker Compose instalados na máquina.
+- **Docker** e **Docker Compose** instalados.
 
-### Passos iniciais
+### 🟢 Execução automática (recomendado)
 
-1. Clonar o repositório:
-
-   ```bash
-   git clone https://github.com/Robsonnsbr/lara_legacy_test.git
-   ```
-
-2. Entrar na pasta do projeto:
-   ```bash
-   cd lara_legacy_test
-   ```
-
-### 1. Usando o script `setup.sh` (recomendado)
+Para rodar o projeto completo (backend, frontend e banco) com um único comando, utilize o script `setup.sh`:
 
 ```bash
 ./setup.sh
 ```
 
-Este comando:
+O script executa automaticamente as seguintes etapas:
 
 - Verifica Docker Compose.
-- Gera `.env` do backend e `.env.local` do frontend.
+- Gera os arquivos `.env` do backend e `.env.local` do frontend.
 - Sobe os containers.
-- Aguarda MySQL ficar saudável.
+- Aguarda o MySQL ficar disponível.
 - Instala dependências (Composer e npm).
 - Gera `APP_KEY`.
-- Roda migrations + seeds.
-- Executa os testes automatizados.
-- Inicia o frontend em modo dev.
+- Roda migrations e seeds.
+- Inicia o frontend em modo desenvolvimento.
 
-Acesse:
+Após a execução, acesse:
 
-- Backend API: [http://localhost/api/v1/fornecedores](http://localhost/api/v1/fornecedores)
-- Frontend: [http://localhost:3000](http://localhost:3000)
+- **Backend API:** [http://localhost/api/v1/products](http://localhost/api/v1/products)
+- **Frontend:** [http://localhost:3000](http://localhost:3000)
 
 ---
 
-### 2. Manualmente (sem `setup.sh`)
+### 🧭 Execução manual (opcional)
 
-1. Subir containers:
+1. Clonar o repositório:
+
+   ```bash
+   git clone https://github.com/Robsonnsbr/test_anbfarma.git
+   cd test_anbfarma
+   ```
+
+2. Subir os containers:
 
    ```bash
    docker compose up -d --build
    ```
 
-2. Backend:
+3. Rodar as migrations e seeds:
 
    ```bash
-   docker compose exec backend composer install
-   docker compose exec backend php artisan key:generate
    docker compose exec backend php artisan migrate --seed
-   docker compose exec backend php artisan test
    ```
 
-3. Frontend:
+4. Iniciar o frontend:
    ```bash
    docker compose exec frontend npm install
-   docker compose exec -d frontend npm run dev -- -H 0.0.0.0 -p 3000
+   docker compose exec frontend npm run dev
    ```
 
 ---
 
-## Plano de migração
+### Acessos locais
 
-O plano resumido está em [`legacy/README_legacy.md`](legacy/README_legacy.md).  
-Ele descreve:
+- **Backend API:** [http://localhost/api/v1/products](http://localhost/api/v1/products)
+- **Frontend:** [http://localhost:3000](http://localhost:3000)
 
-- Estratégia incremental (rodar Laravel em paralelo ao legado).
-- Estrutura de dados e validações migradas.
-- Como manter consistência (índices, chaves únicas, CNPJ).
-- Cronograma proposto para desligar o legado.
+---
 
-## FrontEnd(Nexjs)
-<img width="1107" height="848" alt="Image" src="https://github.com/user-attachments/assets/b00cdd4d-724c-455f-8a36-2fcd1dcfb930" />
+## 🧠 Estrutura de pastas
+
+```bash
+.
+├── backend/                # Projeto Laravel
+│   ├── app/
+│   ├── database/
+│   │   ├── migrations/
+│   │   ├── seeders/
+│   │   └── factories/
+│   └── routes/api.php
+│
+├── frontend/               # Projeto Next.js
+│   ├── src/
+│   │   ├── app/
+│   │   ├── components/
+│   │   ├── contexts/
+│   │   └── services/
+│   └── package.json
+│
+├── docker-compose.yml
+├── setup.sh
+└── README.md
+```
+
+---
+
+## 🧾 Endpoints principais (Laravel API)
+
+| Método | Rota                    | Descrição                        | Autenticação |
+| ------ | ----------------------- | -------------------------------- | ------------ |
+| POST   | `/api/v1/register`      | Registro de usuário              | ❌           |
+| POST   | `/api/v1/login`         | Login e geração de token Sanctum | ❌           |
+| POST   | `/api/v1/logout`        | Logout                           | ✅           |
+| GET    | `/api/v1/products`      | Listar produtos                  | ✅           |
+| POST   | `/api/v1/products`      | Criar produto                    | ✅           |
+| PUT    | `/api/v1/products/{id}` | Editar produto                   | ✅           |
+| DELETE | `/api/v1/products/{id}` | Excluir produto                  | ✅           |
+
+---
+
+## 🧪 Seeds e Mock
+
+O seed gera automaticamente 10 produtos com nomes, preços e imagens reais.
+
+**Exemplo de produto gerado:**
+
+```json
+{
+  "name": "Banana Prata",
+  "description": "Banana fresca e doce da região.",
+  "price": 6.9,
+  "stock": 120,
+  "image_url": "https://images.unsplash.com/photo-1574226516831-e1dff420e12b"
+}
+```
+
+---
+
+## 🛒 Frontend – Preview
+
+<img width="1107" alt="Frontend Frutaria" src="https://github.com/user-attachments/assets/b00cdd4d-724c-455f-8a36-2fcd1dcfb930" />
+
+---
+
+## 📘 Observações finais
+
+- O sistema roda **exclusivamente em modo de desenvolvimento**.
+- O código segue boas práticas de **PSR-12** e **SOLID** no backend.
+- O frontend foi estruturado com **componentização** e **contexts reutilizáveis**.
+- Todos os containers estão integrados e podem ser reiniciados via `docker compose down && docker compose up -d`.

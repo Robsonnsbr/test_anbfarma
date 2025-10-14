@@ -12,11 +12,11 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->words(2, true),
-            'description' => fake()->sentence(6),
-            'price' => fake()->randomFloat(2, 1, 100),
-            'stock' => fake()->numberBetween(0, 1000),
-            'image_url' => fake()->imageUrl(640, 480, 'fruit', true),
+            'name' => 'Banana Nanica',
+            'description' => 'Banana fresca e madura.',
+            'price' => 4.99,
+            'stock' => 100,
+            'image_url' => 'https://www.extraplus.com.br/uploads/produtos/original/1407_1407.png', // banana real
         ];
     }
 }
