@@ -125,7 +125,7 @@ docker compose exec -d -w /usr/src/app frontend sh -lc "npm run dev -- -H 0.0.0.
 
 log ""
 log "Projeto pronto."
-log "Backend (Laravel API): http://localhost/api/vagas  |  http://localhost/api/candidatos"
+log "Backend (Laravel API): http://localhost/api/v1
 log "Frontend (Next.js):    http://localhost:3000"
 log ""
 log "Logs do frontend: docker compose logs -f frontend"
