@@ -96,7 +96,20 @@ O sistema simula o fluxo básico de um e-commerce:
 
 - **Docker** e **Docker Compose** instalados.
 
-### 🟢 Execução automática (recomendado)
+---
+
+### 🟢 Clonagem do repositório e entrada na pasta
+
+Clone o projeto e entre na pasta raiz:
+
+```bash
+git clone https://github.com/Robsonnsbr/test_anbfarma.git
+cd test_anbfarma
+```
+
+---
+
+### 🧰 Opção 1 — Execução automática (recomendada)
 
 Para rodar o projeto completo (backend, frontend e banco) com um único comando, utilize o script `setup.sh`:
 
@@ -122,28 +135,24 @@ Após a execução, acesse:
 
 ---
 
-### 🧭 Execução manual (opcional)
+### ⚙️ Opção 2 — Execução manual
 
-1. Clonar o repositório:
+Caso prefira executar manualmente:
 
-   ```bash
-   git clone https://github.com/Robsonnsbr/test_anbfarma.git
-   cd test_anbfarma
-   ```
-
-2. Subir os containers:
+1. Subir os containers:
 
    ```bash
    docker compose up -d --build
    ```
 
-3. Rodar as migrations e seeds:
+2. Rodar as migrations e seeds:
 
    ```bash
    docker compose exec backend php artisan migrate --seed
    ```
 
-4. Iniciar o frontend:
+3. Iniciar o frontend:
+
    ```bash
    docker compose exec frontend npm install
    docker compose exec frontend npm run dev
@@ -224,7 +233,10 @@ O seed gera automaticamente 10 produtos com nomes, preços e imagens reais.
 - O frontend foi estruturado com **componentização** e **contexts reutilizáveis**.
 - Todos os containers estão integrados e podem ser reiniciados via `docker compose down && docker compose up -d`.
 
-## Preview Front-end
+---
+
+## 🖼️ Preview Front-end
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/19a37058-2930-41d1-bbae-8b41bcd67133" alt="Login 1" width="45%" hspace="5" />
   <img src="https://github.com/user-attachments/assets/81dfdcb4-f0e8-4f7a-975d-05fa82ee8ac6" alt="Login 2" width="45%" hspace="5" />
