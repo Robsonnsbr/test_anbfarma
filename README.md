@@ -131,7 +131,7 @@ O script executa automaticamente as seguintes etapas:
 
 Após a execução, acesse:
 
-- **Backend API:** [http://localhost/api/v1](http://localhost/api/v1)
+- **Backend API:** [http://localhost:8000/api/v1](http://localhost:8000/api/v1)
 - **Frontend:** [http://localhost:3000](http://localhost:3000)
 
 ---
@@ -163,7 +163,7 @@ Caso prefira executar manualmente:
 
 ### Acessos locais
 
-- **Backend API:** [http://localhost/api/v1](http://localhost/api/v1)
+- **Backend API:** [http://localhost:8000/api/v1](http://localhost:8000/api/v1)
 - **Frontend:** [http://localhost:3000](http://localhost:3000)
 
 ---
