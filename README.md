@@ -117,6 +117,13 @@ Para rodar o projeto completo (backend, frontend e banco) com um único comando,
 ./setup.sh
 ```
 
+## IMPORTANTE!
+
+### Usuário padrão para testes:
+
+email: test@example.com
+password: 123456
+
 O script executa automaticamente as seguintes etapas:
 
 - Verifica Docker Compose.
